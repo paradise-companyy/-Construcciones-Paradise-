@@ -5,7 +5,7 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#111;
 color:white;
 }
@@ -16,11 +16,12 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:20px 50px;
+height:80px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.85);
+padding:0 50px;
+background:rgba(0,0,0,.9);
 z-index:1000;
 }
 
@@ -28,8 +29,8 @@ z-index:1000;
 .logo-text{
 font-size:22px;
 font-weight:bold;
-line-height:1.1;
 color:#f57c00;
+line-height:1;
 }
 
 
@@ -47,149 +48,196 @@ font-weight:bold;
 }
 
 
+
 .hero{
-height:100vh;
+
+height:90vh;
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600");
+
+background-size:cover;
+background-position:center;
+
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600");
-
-background-size:cover;
-background-position:center;
 }
 
 
 
 .hero-content{
+
 max-width:900px;
 padding:20px;
+
 }
 
 
 .hero h1{
+
 font-size:65px;
 text-transform:uppercase;
 margin-bottom:20px;
+
 }
 
 
 .hero h2{
-font-size:30px;
+
+font-size:28px;
 color:#ddd;
-margin-bottom:20px;
-}
+margin-bottom:35px;
 
-
-.hero p{
-font-size:20px;
-color:#ccc;
 }
 
 
 
 .btn{
+
 display:inline-block;
-padding:18px 40px;
 background:#f57c00;
 color:white;
+padding:15px 35px;
+border-radius:8px;
 text-decoration:none;
 font-weight:bold;
-border-radius:10px;
-transition:.3s;
-}
 
-
-.btn:hover{
-background:#ff9800;
-transform:translateY(-5px);
 }
 
 
 
 section{
-padding:100px 10%;
+
+padding:70px 8%;
+
 }
 
 
 
 section h2{
+
 text-align:center;
-font-size:42px;
+font-size:38px;
 color:#f57c00;
-margin-bottom:50px;
+margin-bottom:35px;
+
 }
 
 
 
-section p{
-max-width:1000px;
+#empresa p{
+
+text-align:center;
+max-width:900px;
 margin:auto;
 font-size:20px;
-line-height:1.7;
+line-height:1.6;
 color:#ddd;
-text-align:center;
+
 }
 
 
 
 
-.cards{
+.services{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 
 }
 
 
 
-.card{
+.service{
 
 background:#1c1c1c;
-padding:35px;
 border-radius:15px;
-text-align:center;
-border:1px solid #333;
+overflow:hidden;
 transition:.3s;
+border:1px solid #333;
 
 }
 
 
 
-.card:hover{
+.service:hover{
 
-transform:translateY(-10px);
+transform:translateY(-8px);
 border-color:#f57c00;
 
 }
 
 
 
-.card h3{
+.service img{
+
+width:100%;
+height:200px;
+object-fit:cover;
+
+}
+
+
+
+.service h3{
 
 color:#f57c00;
-font-size:25px;
-margin-bottom:15px;
+font-size:24px;
+padding:15px 20px 5px;
 
 }
 
 
 
-.card p{
+.service p{
 
-font-size:17px;
+color:#ddd;
+padding:0 20px 25px;
+line-height:1.5;
 
 }
 
 
 
-#porque{
+
+.ventajas{
 
 background:#181818;
+
+}
+
+
+
+.boxes{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+
+}
+
+
+
+.boxes div{
+
+background:#222;
+padding:25px;
+text-align:center;
+border-radius:12px;
+
+}
+
+
+
+.boxes h3{
+
+color:#f57c00;
+margin-bottom:10px;
 
 }
 
@@ -198,7 +246,6 @@ background:#181818;
 #contacto{
 
 text-align:center;
-background:#151515;
 
 }
 
@@ -206,8 +253,8 @@ background:#151515;
 
 #contacto p{
 
-margin:15px;
 font-size:22px;
+margin:15px;
 
 }
 
@@ -217,25 +264,26 @@ footer{
 
 background:#000;
 text-align:center;
-padding:30px;
+padding:25px;
 color:#aaa;
 
 }
 
 
 
-@media(max-width:700px){
 
-nav{
+@media(max-width:900px){
 
-padding:15px;
+.services{
+
+grid-template-columns:1fr;
 
 }
 
 
-nav ul{
+.boxes{
 
-display:none;
+grid-template-columns:1fr 1fr;
 
 }
 
@@ -246,12 +294,22 @@ font-size:40px;
 
 }
 
+}
 
-.hero h2{
 
-font-size:22px;
+@media(max-width:600px){
+
+nav ul{
+
+display:none;
 
 }
 
+
+.boxes{
+
+grid-template-columns:1fr;
+
+}
 
 }
